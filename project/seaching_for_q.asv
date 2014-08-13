@@ -1,0 +1,4 @@
+
+function [n,tot]=Calculation_for_n(x,x2)
+
+

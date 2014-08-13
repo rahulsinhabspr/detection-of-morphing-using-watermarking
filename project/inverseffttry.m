@@ -1,0 +1,27 @@
+inputimage=imread('rahul','jpeg');
+% figure,imshow(inputimage);
+gimage=rgb2gray(inputimage);
+figure,imshow(gimage);
+F=fft2(gimage);
+r=abs(F);
+theta=angle(F);
+FM=r.*(i*theta);
+%newimage=ifft2(FM);
+newimage=ifft2(F);
+newuimage=uint8(newimage);
+% figure,imshow(newimage);
+figure,imshow(newuimage);
+a=isequal(newuimage,gimage)
+% figure,imshow(int8(newimage));
+% figure,imshow(int8(abs(newimage)));
+% figure,imshow(int8(newimage),[]);
+% figure,imshow(int8(newimage),[low high]);
+% figure,imshow(int8(newimage),[high low]);
+% figure,imshow(int8(newimage),RGB);
+% figure,imshow(int8(newimage),mao);
+% figure,imshow(abs(newimage));
+% figure,imshow(abs(newimage),[low high]);
+% figure,imshow(abs(newimage),[0 80]);
+% figure,imshow(int8(newimage),[0 80]);
+% figure,imshow(int16(newimage),[]);
+% figure,imshow(int32(newimage),[]);
